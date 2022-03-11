@@ -22,7 +22,7 @@ class App extends React.Component {
   };
 
   getResults = (code, data) => {
-    if (data.response !=== "Symbol not supported") {
+    if (data.response !== "Symbol not supported") {
       this.setState(
         {
           table_Values: this.state.table_Values.concat(data.response),
