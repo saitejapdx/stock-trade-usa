@@ -1,14 +1,14 @@
 import React from "react";
 import "./TableBox.css";
+
 class TableBox extends React.Component {
   state = {
     currency: "$",
   };
   render() {
     let tableDataDOM = "";
-     // eslint-disable-next-line array-callback-return
-     tableDataDOM = this.props.tab_data.map((table, index) => {
-      console.log(this.props.tab_data);
+    tableDataDOM = this.props.table_Values.map((table, index) => {
+      console.log(this.props.table_Values);
       console.log(index);
 
       if (table !== "Symbol not supported") {
@@ -24,15 +24,19 @@ class TableBox extends React.Component {
             <td className="openrow">
               {this.state.currency + table.o.toFixed(2)}
             </td>
+
             <td className="lowrow">
               {this.state.currency + table.l.toFixed(2)}
             </td>
+
             <td className="highrow">
               {this.state.currency + table.h.toFixed(2)}
             </td>
+
             <td className="pcloserow">
               {this.state.currency + table.pc.toFixed(2)}
             </td>
+
             <td className="closerow">
               {this.state.currency + table.c.toFixed(2)}
             </td>
@@ -46,15 +50,16 @@ class TableBox extends React.Component {
         );
       }
     });
+
     return (
       <div className="item-table">
         <h5 className="table-heading">Your Companies Latest Stock values:</h5>
-        {this.props.display_table ? (
+        {this.props.show_Table ? (
           <table className="table table-striped">
             <thead>
               <tr>
                 <th>Stock Code</th>
-                <th>Last Updated Date</th>
+                <th>Last Updated Data</th>
                 <th>Open Price</th>
                 <th>Low Price</th>
                 <th>High Price</th>

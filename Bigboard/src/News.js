@@ -3,14 +3,16 @@ import axios from "axios";
 import moment from "moment";
 import "./News.css";
 class News extends React.Component {
- 
+  constructor(props) {
+    super(props);
+  }
   state = {
     Data: "*Provide a company stock ticker for latest news*",
   };
 
   componentDidUpdate(pP) {
-    if (pP.cstockcode !== this.props.cstockcode) {
-      console.log(this.props.cstockcode);
+    if (pP.currentStockCode != this.props.currentStockCode) {
+      console.log(this.props.currentStockCode);
       let startDate = Math.round(new Date().getTime() / 1000);
       let endDate = startDate - 72 * 3600;
       startDate = moment.unix(startDate).format("YYYY MMM DD");
@@ -29,7 +31,7 @@ class News extends React.Component {
       axios
         .get("https://finnhub.io/api/v1/company-news", {
           params: {
-            symbol: this.props.cstockcode,
+            symbol: this.props.currentStockCode,
             from: endDate,
             to: startDate,
             token: "bu5pnnf48v6qku34c7vg",
@@ -53,9 +55,9 @@ class News extends React.Component {
           <div id="ticker" className="ticker d-flex news">
             <span className="d-flex align-items-center">&nbsp;NEWS</span>
           </div>
-          <p className="news-scroll" behavior="scroll" direction="left">
-            <a href="sad/"> {this.state.Data}</a>
-          </p>
+          <marquee className="news-scroll" behavior="scroll" direction="left">
+            <a href="#"> {this.state.Data}</a>
+          </marquee>
         </div>
       </div>
     );

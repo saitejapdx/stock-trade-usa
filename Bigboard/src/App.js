@@ -10,29 +10,29 @@ import video from "./DNA.mp4";
 class App extends React.Component {
   state = {
     videoSource: video,
-    tab_data: [],
+    table_Values: [],
     graphData: [],
-    cstockcode: "",
+    currentStockCode: "",
     showFilterDOM: false,
     showFilterData: false,
-    display_table: false,
-    Graphdisplay: false,
+    show_Table: false,
+    showGraph: false,
     alter_Graph: false,
     dict_codes: [],
   };
 
   getResults = (code, data) => {
-    if (data.response !== "Symbol not supported") {
+    if (data.response !=== "Symbol not supported") {
       this.setState(
         {
-          tab_data: this.state.tab_data.concat(data.response),
-          cstockcode: data.stockcode,
+          table_Values: this.state.table_Values.concat(data.response),
+          currentStockCode: data.stockcode,
           dict_codes: this.state.dict_codes.concat({
             stock_value: data.stockcode,
           }),
           showFilterDOM: true,
-          display_table: true,
-          Graphdisplay: true,
+          show_Table: true,
+          showGraph: true,
           alter_Graph: false,
         },
         () => {
@@ -48,13 +48,13 @@ class App extends React.Component {
     this.setState(
       {
         dates: dates,
-        cstockcode: dates.stock_code,
+        currentStockCode: dates.stock_code,
         alter_Graph: true,
-        display_table: true,
-        Graphdisplay: true,
+        show_Table: true,
+        showGraph: true,
       },
       () => {
-        console.log(this.state.cstockcode);
+        console.log(this.state.currentStockCode);
         console.log(this.state.dates);
       }
     );
@@ -76,7 +76,7 @@ class App extends React.Component {
           Your browser does not support the video tag.
         </video>
         <div className="heading-container">
-          <h1 className="pageheading">Big Board</h1>
+          <h1 className="pageheading">Stock Price Dashboard</h1>
         </div>
         <div className="input-container">
           <InputBox getResults={this.getResults}></InputBox>
@@ -89,39 +89,35 @@ class App extends React.Component {
           }
         >
           <FilterBox
-            cstockcode={this.state.cstockcode}
+            currentStockCode={this.state.currentStockCode}
             filterData={this.filterData}
             dict_codes={this.state.dict_codes}
           ></FilterBox>
         </div>
         <div
           className={
-            this.state.display_table
-              ? "graph-container"
-              : "hidden-table-container"
+            this.state.show_Table ? "graph-container" : "hidden-table-container"
           }
           tabindex="0"
         >
           <GraphBox
-            cstockcode={this.state.cstockcode}
+            currentStockCode={this.state.currentStockCode}
             dates={this.state.dates}
             alter_Graph={this.state.alter_Graph}
           ></GraphBox>
         </div>
         <div
           className={
-            this.state.display_table
-              ? "table-container"
-              : "hidden-table-container"
+            this.state.show_Table ? "table-container" : "hidden-table-container"
           }
           tabindex="0"
         >
           <TableBox
-            display_table={this.state.display_table}
-            tab_data={this.state.tab_data}
+            show_Table={this.state.show_Table}
+            table_Values={this.state.table_Values}
           ></TableBox>
         </div>
-        <News cstockcode={this.state.cstockcode}></News>
+        <News currentStockCode={this.state.currentStockCode}></News>
       </div>
     );
   }

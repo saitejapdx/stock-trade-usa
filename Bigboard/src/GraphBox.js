@@ -11,20 +11,19 @@ class GraphBox extends React.Component {
     };
   }
   componentDidUpdate(pP) {
-    
-    if (pP.cstockcode !== this.props.cstockcode) {
+    if (pP.currentStockCode !== this.props.currentStockCode) {
       if (this.props.alter_Graph === false) {
         var startDate = Math.round(new Date().getTime() / 1000);
         var endDate = startDate - 72 * 3600;
       } else {
-         startDate = this.props.dates.endDate;
-         endDate = this.props.dates.startDate;
+        var startDate = this.props.dates.endDate;
+        var endDate = this.props.dates.startDate;
       }
-      
+      const pointerToThis = this;
       axios
         .get("https://finnhub.io/api/v1/stock/candle", {
           params: {
-            symbol: this.props.cstockcode,
+            symbol: this.props.currentStockCode,
             resolution: 5,
             from: endDate,
             to: startDate,
@@ -43,7 +42,7 @@ class GraphBox extends React.Component {
           var y = response.data.c;
           var lowOrHighColor = y[0] < y[y.length - 1] ? "#81b737" : "#d54f4f";
           this.setState({
-            symbol: this.props.cstockcode,
+            symbol: this.props.currentStockCode,
             text: "in the last 72 Hours",
             Data: {
               labels: x,
@@ -76,17 +75,17 @@ class GraphBox extends React.Component {
         });
     } else if (pP.dates !== this.props.dates) {
       if (this.props.alter_Graph === false) {
-         startDate = Math.round(new Date().getTime() / 1000);
-         endDate = startDate - 72 * 3600;
+        var startDate = Math.round(new Date().getTime() / 1000);
+        var endDate = startDate - 72 * 3600;
       } else {
-         startDate = this.props.dates.endDate;
-         endDate = this.props.dates.startDate;
+        var startDate = this.props.dates.endDate;
+        var endDate = this.props.dates.startDate;
       }
-     
+      const pointerToThis = this;
       axios
         .get("https://finnhub.io/api/v1/stock/candle", {
           params: {
-            symbol: this.props.cstockcode,
+            symbol: this.props.currentStockCode,
             resolution: 5,
             from: endDate,
             to: startDate,
@@ -116,7 +115,7 @@ class GraphBox extends React.Component {
             var lowOrHighColor = y[0] < y[y.length - 1] ? "#81b737" : "#d54f4f";
             this.setState({
               text: text,
-              symbol: this.props.cstockcode,
+              symbol: this.props.currentStockCode,
               Data: {
                 labels: x,
                 datasets: [

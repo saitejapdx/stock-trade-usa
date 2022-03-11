@@ -1,35 +1,43 @@
 .item-table {
-  padding: 10px;
-}
-table th {
-  cursor: pointer;
-  font-size: 17px;
-  background-color: rgb(138, 180, 138);
-  color: white;
-}
-.table-heading {
-  text-align: center;
-  padding: 20px;
-  font-weight: 900;
-  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
-  text-shadow: 1px 1px rgb(167, 166, 166);
-  font-size: 23px;
-}
-td {
-  color: rgb(138, 180, 138);
-}
-table {
-  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
-  font-weight: 600;
-}
-@media (max-width: 500px) {
+    padding: 10px;
+  }
+
   table th {
-    font-size: 15px;
+    cursor: pointer;
+    font-size: 17px;
+    background-color: rgb(0, 35, 80);
+    color: white;
   }
-  td {
-    font-size: 13px;
-  }
+
   .table-heading {
-    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    font-weight: 900;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    text-shadow: 1px 1px rgb(167, 166, 166);
+    font-size: 23px;
   }
-}
+
+  td {
+    color: rgb(0, 35, 80);
+  }
+
+  table {
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-weight: 600;
+  }
+
+  @media (max-width: 500px) {
+    table th {
+      font-size: 15px;
+    }
+
+    td {
+      font-size: 13px;
+    }
+
+    .table-heading {
+      font-size: 20px;
+    }
+    
+  }
