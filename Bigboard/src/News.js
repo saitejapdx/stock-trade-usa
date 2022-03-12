@@ -1,8 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/no-distracting-elements */
 import React from "react";
 import axios from "axios";
 import moment from "moment";
 import "./News.css";
 class News extends React.Component {
+  // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
   }
@@ -11,7 +14,7 @@ class News extends React.Component {
   };
 
   componentDidUpdate(pP) {
-    if (pP.currentStockCode != this.props.currentStockCode) {
+    if (pP.currentStockCode !== this.props.currentStockCode) {
       console.log(this.props.currentStockCode);
       let startDate = Math.round(new Date().getTime() / 1000);
       let endDate = startDate - 72 * 3600;

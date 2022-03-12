@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/FRONT-END-PROJECT--BIGBOARD/static/css/main.694fd29e.chunk.css",
+    "main.js": "/FRONT-END-PROJECT--BIGBOARD/static/js/main.764588ba.chunk.js",
+    "main.js.map": "/FRONT-END-PROJECT--BIGBOARD/static/js/main.764588ba.chunk.js.map",
+    "runtime-main.js": "/FRONT-END-PROJECT--BIGBOARD/static/js/runtime-main.4e943bd6.js",
+    "runtime-main.js.map": "/FRONT-END-PROJECT--BIGBOARD/static/js/runtime-main.4e943bd6.js.map",
+    "static/js/2.868a876f.chunk.js": "/FRONT-END-PROJECT--BIGBOARD/static/js/2.868a876f.chunk.js",
+    "static/js/2.868a876f.chunk.js.map": "/FRONT-END-PROJECT--BIGBOARD/static/js/2.868a876f.chunk.js.map",
+    "static/js/3.b7bebb18.chunk.js": "/FRONT-END-PROJECT--BIGBOARD/static/js/3.b7bebb18.chunk.js",
+    "static/js/3.b7bebb18.chunk.js.map": "/FRONT-END-PROJECT--BIGBOARD/static/js/3.b7bebb18.chunk.js.map",
+    "index.html": "/FRONT-END-PROJECT--BIGBOARD/index.html",
+    "static/css/main.694fd29e.chunk.css.map": "/FRONT-END-PROJECT--BIGBOARD/static/css/main.694fd29e.chunk.css.map",
+    "static/js/2.868a876f.chunk.js.LICENSE.txt": "/FRONT-END-PROJECT--BIGBOARD/static/js/2.868a876f.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/FRONT-END-PROJECT--BIGBOARD/static/media/DNA.a6b5702f.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4e943bd6.js",
+    "static/js/2.868a876f.chunk.js",
+    "static/css/main.694fd29e.chunk.css",
+    "static/js/main.764588ba.chunk.js"
+  ]
+}

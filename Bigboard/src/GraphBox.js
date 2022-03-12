@@ -16,10 +16,10 @@ class GraphBox extends React.Component {
         var startDate = Math.round(new Date().getTime() / 1000);
         var endDate = startDate - 72 * 3600;
       } else {
-        var startDate = this.props.dates.endDate;
-        var endDate = this.props.dates.startDate;
+        startDate = this.props.dates.endDate;
+        endDate = this.props.dates.startDate;
       }
-      const pointerToThis = this;
+      //const pointerToThis = this;
       axios
         .get("https://finnhub.io/api/v1/stock/candle", {
           params: {
@@ -75,13 +75,13 @@ class GraphBox extends React.Component {
         });
     } else if (pP.dates !== this.props.dates) {
       if (this.props.alter_Graph === false) {
-        var startDate = Math.round(new Date().getTime() / 1000);
-        var endDate = startDate - 72 * 3600;
+        startDate = Math.round(new Date().getTime() / 1000);
+        endDate = startDate - 72 * 3600;
       } else {
-        var startDate = this.props.dates.endDate;
-        var endDate = this.props.dates.startDate;
+        startDate = this.props.dates.endDate;
+        endDate = this.props.dates.startDate;
       }
-      const pointerToThis = this;
+      //const pointerToThis = this;
       axios
         .get("https://finnhub.io/api/v1/stock/candle", {
           params: {
